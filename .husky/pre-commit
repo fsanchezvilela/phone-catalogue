@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+# This script is executed before a commit is made   
+# Run linting and formatting checks before committing
+pnpm run lint
+pnpm run format
+# Run lint-staged to apply fixes to staged files           
+pnpm run lint-staged
