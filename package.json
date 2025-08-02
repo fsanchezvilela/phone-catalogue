@@ -6,7 +6,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build"
+    "build": "vite build",
+    "docker:build": "docker build -t phone-catalogue .",
+    "docker:run": "docker run -p 3000:3000 phone-catalogue",
+    "docker:run:dev": "docker run -p 3000:3000 -v $(pwd):/app phone-catalogue",
+    "docker:compose": "docker compose up --build",
+    "docker:compose:dev": "docker compose -f docker-compose.dev.yml up --build",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write .",
+    "prettier": "prettier --check .",
+    "clean": "rm -rf node_modules dist .tanstack",
+    "clean:docker": "docker system prune -f && docker volume prune -f",
+    "start": "vite preview"
   },
   "keywords": [],
   "author": "Fernando Sanchez",
