@@ -8,35 +8,86 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { createServerRootRoute } from '@tanstack/react-start/server';
+
 import { Route as rootRouteImport } from './routes/__root';
 import { Route as IndexRouteImport } from './routes/index';
+import { Route as PhoneIdRouteImport } from './routes/phone/$id';
+import { ServerRoute as ApiPhoneIndexServerRouteImport } from './routes/api/phone/index';
+import { ServerRoute as ApiPhoneIdServerRouteImport } from './routes/api/phone/$id';
+
+const rootServerRouteImport = createServerRootRoute();
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any);
+const PhoneIdRoute = PhoneIdRouteImport.update({
+  id: '/phone/$id',
+  path: '/phone/$id',
+  getParentRoute: () => rootRouteImport,
+} as any);
+const ApiPhoneIndexServerRoute = ApiPhoneIndexServerRouteImport.update({
+  id: '/api/phone/',
+  path: '/api/phone/',
+  getParentRoute: () => rootServerRouteImport,
+} as any);
+const ApiPhoneIdServerRoute = ApiPhoneIdServerRouteImport.update({
+  id: '/api/phone/$id',
+  path: '/api/phone/$id',
+  getParentRoute: () => rootServerRouteImport,
+} as any);
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute;
+  '/phone/$id': typeof PhoneIdRoute;
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute;
+  '/phone/$id': typeof PhoneIdRoute;
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport;
   '/': typeof IndexRoute;
+  '/phone/$id': typeof PhoneIdRoute;
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/';
+  fullPaths: '/' | '/phone/$id';
   fileRoutesByTo: FileRoutesByTo;
-  to: '/';
-  id: '__root__' | '/';
+  to: '/' | '/phone/$id';
+  id: '__root__' | '/' | '/phone/$id';
   fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
+  PhoneIdRoute: typeof PhoneIdRoute;
+}
+export interface FileServerRoutesByFullPath {
+  '/api/phone/$id': typeof ApiPhoneIdServerRoute;
+  '/api/phone': typeof ApiPhoneIndexServerRoute;
+}
+export interface FileServerRoutesByTo {
+  '/api/phone/$id': typeof ApiPhoneIdServerRoute;
+  '/api/phone': typeof ApiPhoneIndexServerRoute;
+}
+export interface FileServerRoutesById {
+  __root__: typeof rootServerRouteImport;
+  '/api/phone/$id': typeof ApiPhoneIdServerRoute;
+  '/api/phone/': typeof ApiPhoneIndexServerRoute;
+}
+export interface FileServerRouteTypes {
+  fileServerRoutesByFullPath: FileServerRoutesByFullPath;
+  fullPaths: '/api/phone/$id' | '/api/phone';
+  fileServerRoutesByTo: FileServerRoutesByTo;
+  to: '/api/phone/$id' | '/api/phone';
+  id: '__root__' | '/api/phone/$id' | '/api/phone/';
+  fileServerRoutesById: FileServerRoutesById;
+}
+export interface RootServerRouteChildren {
+  ApiPhoneIdServerRoute: typeof ApiPhoneIdServerRoute;
+  ApiPhoneIndexServerRoute: typeof ApiPhoneIndexServerRoute;
 }
 
 declare module '@tanstack/react-router' {
@@ -48,12 +99,45 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport;
       parentRoute: typeof rootRouteImport;
     };
+    '/phone/$id': {
+      id: '/phone/$id';
+      path: '/phone/$id';
+      fullPath: '/phone/$id';
+      preLoaderRoute: typeof PhoneIdRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+  }
+}
+declare module '@tanstack/react-start/server' {
+  interface ServerFileRoutesByPath {
+    '/api/phone/': {
+      id: '/api/phone/';
+      path: '/api/phone';
+      fullPath: '/api/phone';
+      preLoaderRoute: typeof ApiPhoneIndexServerRouteImport;
+      parentRoute: typeof rootServerRouteImport;
+    };
+    '/api/phone/$id': {
+      id: '/api/phone/$id';
+      path: '/api/phone/$id';
+      fullPath: '/api/phone/$id';
+      preLoaderRoute: typeof ApiPhoneIdServerRouteImport;
+      parentRoute: typeof rootServerRouteImport;
+    };
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PhoneIdRoute: PhoneIdRoute,
 };
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>();
+const rootServerRouteChildren: RootServerRouteChildren = {
+  ApiPhoneIdServerRoute: ApiPhoneIdServerRoute,
+  ApiPhoneIndexServerRoute: ApiPhoneIndexServerRoute,
+};
+export const serverRouteTree = rootServerRouteImport
+  ._addFileChildren(rootServerRouteChildren)
+  ._addFileTypes<FileServerRouteTypes>();
