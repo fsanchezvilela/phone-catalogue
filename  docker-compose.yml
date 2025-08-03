@@ -10,5 +10,5 @@ services:
       - NODE_ENV=production
       # - CUSTOM_VAR=your_value
     env_file:
-      - .env
+      - .env.docker
     restart: unless-stopped

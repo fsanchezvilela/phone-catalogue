@@ -4,6 +4,7 @@ import prettierPlugin from 'eslint-plugin-prettier';
 import tsParser from '@typescript-eslint/parser';
 import prettier from 'eslint-config-prettier';
 import globals from 'globals';
+import vitest from 'eslint-plugin-vitest';
 
 export default [
   js.configs.recommended,
@@ -34,6 +35,21 @@ export default [
       'no-unused-vars': 'warn',
       semi: ['error', 'always'],
       'prettier/prettier': 'error',
+    },
+  },
+  // Vitest-specific config for test files
+  {
+    files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
+    plugins: {
+      vitest,
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
+    },
+    languageOptions: {
+      globals: {
+        ...vitest.environments.env.globals,
+      },
     },
   },
   prettier,

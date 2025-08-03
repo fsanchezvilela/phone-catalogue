@@ -15,7 +15,7 @@ export function createRouter() {
       defaultPreload: 'intent',
       defaultErrorComponent: DefaultCatchBoundary,
       defaultNotFoundComponent: () => <NotFound />,
-    }),
+    }) as ReturnType<typeof createTanStackRouter>,
     queryClient
   );
 }
