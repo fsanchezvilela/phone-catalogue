@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "start": "node .output/server/index.mjs",
     "docker:build": "docker build -t phone-catalogue .",
     "docker:run": "docker run -p 3000:3000 phone-catalogue",
     "docker:run:dev": "docker run -p 3000:3000 -v $(pwd):/app phone-catalogue",
@@ -21,9 +22,8 @@
     "lint-staged": "lint-staged",
     "format": "prettier --write .",
     "prettier": "prettier --check .",
-    "clean": "rm -rf node_modules dist .tanstack",
+    "clean": "rm -rf node_modules .output .nitro .tanstack",
     "clean:docker": "docker system prune -f && docker volume prune -f",
-    "start": "vite preview",
     "prepare": "husky install",
     "typecheck": "tsc --noEmit",
     "typecheck:watch": "tsc --noEmit --watch",
