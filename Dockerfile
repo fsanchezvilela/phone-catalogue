@@ -2,8 +2,9 @@
 FROM node:24-alpine AS builder
 
 # Update system packages and install pnpm globally
-RUN apt-get update && apt-get upgrade -y && npm install -g pnpm && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN npm install -g pnpm
 
+# Set the working directory
 WORKDIR /app
 
 # Copy only dependency files first for caching
@@ -22,8 +23,9 @@ RUN pnpm build
 FROM node:24-alpine AS production
 
 # Update system packages and install pnpm
-RUN apt-get update && apt-get upgrade -y && npm install -g pnpm && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN npm install -g pnpm
 
+# Set the working directory
 WORKDIR /app
 
 # Copy only the necessary files from the builder stage
