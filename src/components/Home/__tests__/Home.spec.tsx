@@ -1,36 +1,35 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
-// ---- Mocks ----
+// ---- Mocks: Define INSIDE the factory and assign to globalThis ----
+vi.mock('@tanstack/react-router', () => {
+  globalThis.invalidateMock = vi.fn();
+  globalThis.useLoaderDataMock = vi.fn(() => ({ count: 42 }));
 
-// Mock the router and capture the invalidate function for assertions
-const invalidateMock = vi.fn();
-vi.mock('@tanstack/react-router', () => ({
-  useRouter: () => ({
-    invalidate: invalidateMock,
-  }),
-}));
+  return {
+    useRouter: () => ({
+      invalidate: globalThis.invalidateMock,
+    }),
+    useLoaderData: globalThis.useLoaderDataMock,
+  };
+});
 
-// Mock the loader data (set to 42 as an example)
-vi.mock('~/routes/home', () => ({
-  RouteHome: {
-    useLoaderData: () => 42,
-  },
-}));
-
-// Mock the updateCount action
-const updateCountMock = vi.fn(() => Promise.resolve());
-vi.mock('~/routes/home/actions', () => ({
-  updateCount: updateCountMock,
-}));
+vi.mock('../actions', () => {
+  globalThis.updateCountMock = vi.fn(() => Promise.resolve());
+  return {
+    updateCount: globalThis.updateCountMock,
+  };
+});
 
 // ---- Import Component ----
-import { Home } from '~/components/Home';
+import { Home } from '../index';
 
 // ---- Tests ----
 describe('<Home />', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    globalThis.invalidateMock.mockClear();
+    globalThis.useLoaderDataMock.mockClear();
+    globalThis.updateCountMock.mockClear();
   });
 
   it('renders button with loader data and handles click', async () => {
@@ -45,8 +44,8 @@ describe('<Home />', () => {
 
     // Wait for async updateCount call to resolve and invalidate to be called
     await waitFor(() => {
-      expect(updateCountMock).toHaveBeenCalledWith({ data: 1 });
-      expect(invalidateMock).toHaveBeenCalled();
+      expect(globalThis.updateCountMock).toHaveBeenCalledWith({ data: 1 });
+      expect(globalThis.invalidateMock).toHaveBeenCalled();
     });
   });
 });
