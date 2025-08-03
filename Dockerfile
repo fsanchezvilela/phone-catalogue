@@ -29,8 +29,9 @@ WORKDIR /app
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/pnpm-lock.yaml ./
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/.tanstack ./.tanstack
+COPY --from=builder /app/.nitro ./.nitro
 COPY --from=builder /app/vite.config.ts ./vite.config.ts
 COPY --from=builder /app/tsconfig.json ./tsconfig.json
 
