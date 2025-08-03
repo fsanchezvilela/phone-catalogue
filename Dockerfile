@@ -1,5 +1,5 @@
 # --- Build Stage ---
-FROM node:20-slim AS builder
+FROM node:24.5.0 AS builder
 
 # Update system packages and install pnpm globally
 RUN apt-get update && apt-get upgrade -y && npm install -g pnpm && apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -19,7 +19,7 @@ COPY . .
 RUN pnpm build
 
 # --- Production Stage ---
-FROM node:20-slim
+FROM node:24.5.0 AS production
 
 # Update system packages and install pnpm
 RUN apt-get update && apt-get upgrade -y && npm install -g pnpm && apt-get clean && rm -rf /var/lib/apt/lists/*

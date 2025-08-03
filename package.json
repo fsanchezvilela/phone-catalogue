@@ -76,5 +76,17 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "engines": {
+  "node": "24.5.0"
+},
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fsanchezvilela/phone-catalogue"
   }
 }
