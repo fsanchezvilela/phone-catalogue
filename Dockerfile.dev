@@ -1,12 +1,12 @@
 FROM node:24-alpine AS dev
  
-RUN npm install -g pnpm
+RUN npm install -g pnpm@8.15.6
 
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
 
-RUN pnpm install
+RUN pnpm install 
 
 COPY . .
 

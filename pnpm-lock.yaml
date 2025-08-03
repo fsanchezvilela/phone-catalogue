@@ -10,10 +10,10 @@ dependencies:
     version: 4.1.11(vite@7.0.6)
   '@tanstack/react-query':
     specifier: ^5.66.0
-    version: 5.66.0(react@19.1.1)
+    version: 5.84.1(react@19.1.1)
   '@tanstack/react-query-devtools':
     specifier: ^5.66.0
-    version: 5.66.0(@tanstack/react-query@5.66.0)(react@19.1.1)
+    version: 5.84.1(@tanstack/react-query@5.84.1)(react@19.1.1)
   '@tanstack/react-router':
     specifier: ^1.130.12
     version: 1.130.12(react-dom@19.1.1)(react@19.1.1)
@@ -22,7 +22,7 @@ dependencies:
     version: 1.130.13(@tanstack/react-router@1.130.12)(@tanstack/router-core@1.130.12)(csstype@3.1.3)(react-dom@19.1.1)(react@19.1.1)(solid-js@1.9.7)(tiny-invariant@1.3.3)
   '@tanstack/react-router-with-query':
     specifier: ^1.130.12
-    version: 1.130.12(@tanstack/react-query@5.66.0)(@tanstack/react-router@1.130.12)(@tanstack/router-core@1.130.12)(react-dom@19.1.1)(react@19.1.1)
+    version: 1.130.12(@tanstack/react-query@5.84.1)(@tanstack/react-router@1.130.12)(@tanstack/router-core@1.130.12)(react-dom@19.1.1)(react@19.1.1)
   '@tanstack/react-start':
     specifier: ^1.130.15
     version: 1.130.15(@tanstack/react-router@1.130.12)(@vitejs/plugin-react@4.7.0)(react-dom@19.1.1)(react@19.1.1)(vite@7.0.6)
@@ -40,7 +40,7 @@ dependencies:
     version: 4.1.11
   vite:
     specifier: ^7.0.6
-    version: 7.0.6(@types/node@22.5.4)
+    version: 7.0.6(@types/node@22.17.0)
 
 devDependencies:
   '@eslint/js':
@@ -54,7 +54,7 @@ devDependencies:
     version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.7)(@types/react@19.1.9)(react-dom@19.1.1)(react@19.1.1)
   '@types/node':
     specifier: ^22.5.4
-    version: 22.5.4
+    version: 22.17.0
   '@types/react':
     specifier: ^19.1.9
     version: 19.1.9
@@ -108,7 +108,7 @@ devDependencies:
     version: 5.1.4(typescript@5.9.2)(vite@7.0.6)
   vitest:
     specifier: ^3.2.4
-    version: 3.2.4(@types/node@22.5.4)(jsdom@26.1.0)
+    version: 3.2.4(@types/node@22.17.0)(jsdom@26.1.0)
 
 packages:
 
@@ -1895,7 +1895,7 @@ packages:
       '@tailwindcss/node': 4.1.11
       '@tailwindcss/oxide': 4.1.11
       tailwindcss: 4.1.11
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
     dev: false
 
   /@tanstack/directive-functions-plugin@1.130.12(vite@7.0.6):
@@ -1911,7 +1911,7 @@ packages:
       '@tanstack/router-utils': 1.130.12
       babel-dead-code-elimination: 1.0.10
       tiny-invariant: 1.3.3
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1921,31 +1921,31 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /@tanstack/query-core@5.66.0:
-    resolution: {integrity: sha512-J+JeBtthiKxrpzUu7rfIPDzhscXF2p5zE/hVdrqkACBP8Yu0M96mwJ5m/8cPPYQE9aRNvXztXHlNwIh4FEeMZw==}
+  /@tanstack/query-core@5.83.1:
+    resolution: {integrity: sha512-OG69LQgT7jSp+5pPuCfzltq/+7l2xoweggjme9vlbCPa/d7D7zaqv5vN/S82SzSYZ4EDLTxNO1PWrv49RAS64Q==}
     dev: false
 
-  /@tanstack/query-devtools@5.65.0:
-    resolution: {integrity: sha512-g5y7zc07U9D3esMdqUfTEVu9kMHoIaVBsD0+M3LPdAdD710RpTcLiNvJY1JkYXqkq9+NV+CQoemVNpQPBXVsJg==}
+  /@tanstack/query-devtools@5.84.0:
+    resolution: {integrity: sha512-fbF3n+z1rqhvd9EoGp5knHkv3p5B2Zml1yNRjh7sNXklngYI5RVIWUrUjZ1RIcEoscarUb0+bOvIs5x9dwzOXQ==}
     dev: false
 
-  /@tanstack/react-query-devtools@5.66.0(@tanstack/react-query@5.66.0)(react@19.1.1):
-    resolution: {integrity: sha512-uB57wA2YZaQ2fPcFW0E9O1zAGDGSbRKRx84uMk/86VyU9jWVxvJ3Uzp+zNm+nZJYsuekCIo2opTdgNuvM3cKgA==}
+  /@tanstack/react-query-devtools@5.84.1(@tanstack/react-query@5.84.1)(react@19.1.1):
+    resolution: {integrity: sha512-nle+OQ9B3Z3EG2R3ixvaNcJ6OeqGwmAc5iMDW6Vj+emLZkWRrN3BDsrzZQu414n34lpxplnC7z1jmKuU/scHCQ==}
     peerDependencies:
-      '@tanstack/react-query': ^5.66.0
+      '@tanstack/react-query': ^5.84.1
       react: ^18 || ^19
     dependencies:
-      '@tanstack/query-devtools': 5.65.0
-      '@tanstack/react-query': 5.66.0(react@19.1.1)
+      '@tanstack/query-devtools': 5.84.0
+      '@tanstack/react-query': 5.84.1(react@19.1.1)
       react: 19.1.1
     dev: false
 
-  /@tanstack/react-query@5.66.0(react@19.1.1):
-    resolution: {integrity: sha512-z3sYixFQJe8hndFnXgWu7C79ctL+pI0KAelYyW+khaNJ1m22lWrhJU2QrsTcRKMuVPtoZvfBYrTStIdKo+x0Xw==}
+  /@tanstack/react-query@5.84.1(react@19.1.1):
+    resolution: {integrity: sha512-zo7EUygcWJMQfFNWDSG7CBhy8irje/XY0RDVKKV4IQJAysb+ZJkkJPcnQi+KboyGUgT+SQebRFoTqLuTtfoDLw==}
     peerDependencies:
       react: ^18 || ^19
     dependencies:
-      '@tanstack/query-core': 5.66.0
+      '@tanstack/query-core': 5.83.1
       react: 19.1.1
     dev: false
 
@@ -1968,7 +1968,7 @@ packages:
       - tiny-invariant
     dev: false
 
-  /@tanstack/react-router-with-query@1.130.12(@tanstack/react-query@5.66.0)(@tanstack/react-router@1.130.12)(@tanstack/router-core@1.130.12)(react-dom@19.1.1)(react@19.1.1):
+  /@tanstack/react-router-with-query@1.130.12(@tanstack/react-query@5.84.1)(@tanstack/react-router@1.130.12)(@tanstack/router-core@1.130.12)(react-dom@19.1.1)(react@19.1.1):
     resolution: {integrity: sha512-42oWkHICH9ABs32daRfK3aqq9i38glOJ0Sgs5uCPB5evPoYGEyEGFIc/L8sAKgiJnThMCDUsk+1UZzs0CwHacA==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -1978,7 +1978,7 @@ packages:
       react: '>=18.0.0 || >=19.0.0'
       react-dom: '>=18.0.0 || >=19.0.0'
     dependencies:
-      '@tanstack/react-query': 5.66.0(react@19.1.1)
+      '@tanstack/react-query': 5.84.1(react@19.1.1)
       '@tanstack/react-router': 1.130.12(react-dom@19.1.1)(react@19.1.1)
       '@tanstack/router-core': 1.130.12
       react: 19.1.1
@@ -2029,7 +2029,7 @@ packages:
       '@tanstack/start-plugin-core': 1.130.15(@tanstack/react-router@1.130.12)(vite@7.0.6)
       '@vitejs/plugin-react': 4.7.0(vite@7.0.6)
       pathe: 2.0.3
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
       zod: 3.25.76
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -2099,7 +2099,7 @@ packages:
       '@vitejs/plugin-react': 4.7.0(vite@7.0.6)
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -2229,7 +2229,7 @@ packages:
       babel-dead-code-elimination: 1.0.10
       chokidar: 3.6.0
       unplugin: 2.3.5
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
       zod: 3.25.76
     transitivePeerDependencies:
       - supports-color
@@ -2302,7 +2302,7 @@ packages:
       nitropack: 2.12.4
       pathe: 2.0.3
       ufo: 1.6.1
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
       vitefu: 1.1.1(vite@7.0.6)
       xmlbuilder2: 3.1.1
       zod: 3.25.76
@@ -2500,10 +2500,10 @@ packages:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
 
-  /@types/node@22.5.4:
-    resolution: {integrity: sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==}
+  /@types/node@22.17.0:
+    resolution: {integrity: sha512-bbAKTCqX5aNVryi7qXVMi+OkB3w/OyblodicMbvE38blyAz7GxXf6XYhklokijuPwwVg9sDLKRxt0ZHXQwZVfQ==}
     dependencies:
-      undici-types: 6.19.8
+      undici-types: 6.21.0
 
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -2535,7 +2535,7 @@ packages:
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
     requiresBuild: true
     dependencies:
-      '@types/node': 22.5.4
+      '@types/node': 22.17.0
     dev: false
     optional: true
 
@@ -2770,7 +2770,7 @@ packages:
       '@rolldown/pluginutils': 1.0.0-beta.27
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -2798,7 +2798,7 @@ packages:
       '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
       magic-string: 0.30.17
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
     dev: true
 
   /@vitest/pretty-format@3.2.4:
@@ -4380,7 +4380,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 8.38.0(@typescript-eslint/parser@8.38.0)(eslint@9.32.0)(typescript@5.9.2)
       '@typescript-eslint/utils': 7.18.0(eslint@9.32.0)(typescript@5.9.2)
       eslint: 9.32.0
-      vitest: 3.2.4(@types/node@22.5.4)(jsdom@26.1.0)
+      vitest: 3.2.4(@types/node@22.17.0)(jsdom@26.1.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -7849,8 +7849,8 @@ packages:
       unplugin: 2.3.5
     dev: false
 
-  /undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+  /undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
   /undici@7.13.0:
     resolution: {integrity: sha512-l+zSMssRqrzDcb3fjMkjjLGmuiiK2pMIcV++mJaAc9vhjSGpvM7h43QgP+OAMb1GImHmbPyG2tBXeuyG5iY4gA==}
@@ -8093,7 +8093,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: false
 
-  /vite-node@3.2.4(@types/node@22.5.4):
+  /vite-node@3.2.4(@types/node@22.17.0):
     resolution: {integrity: sha512-EbKSKh+bh1E1IFxeO0pg1n4dvoOTt0UDiXMd/qn++r98+jPO1xtJilvXldeuQ8giIB5IkpjCgMleHMNEsGH6pg==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
@@ -8102,7 +8102,7 @@ packages:
       debug: 4.4.1
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -8129,13 +8129,13 @@ packages:
       debug: 4.4.1
       globrex: 0.1.2
       tsconfck: 3.1.6(typescript@5.9.2)
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
     dev: true
 
-  /vite@7.0.6(@types/node@22.5.4):
+  /vite@7.0.6(@types/node@22.17.0):
     resolution: {integrity: sha512-MHFiOENNBd+Bd9uvc8GEsIzdkn1JxMmEeYX35tI3fv0sJBUTfW5tQsoaOwuY4KhBI09A3dUJ/DXf2yxPVPUceg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
@@ -8175,7 +8175,7 @@ packages:
       yaml:
         optional: true
     dependencies:
-      '@types/node': 22.5.4
+      '@types/node': 22.17.0
       esbuild: 0.25.8
       fdir: 6.4.6(picomatch@4.0.3)
       picomatch: 4.0.3
@@ -8193,10 +8193,10 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 7.0.6(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
     dev: false
 
-  /vitest@3.2.4(@types/node@22.5.4)(jsdom@26.1.0):
+  /vitest@3.2.4(@types/node@22.17.0)(jsdom@26.1.0):
     resolution: {integrity: sha512-LUCP5ev3GURDysTWiP47wRRUpLKMOfPh+yKTx3kVIEiu5KOMeqzpnYNsKyOoVrULivR8tLcks4+lga33Whn90A==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
@@ -8225,7 +8225,7 @@ packages:
         optional: true
     dependencies:
       '@types/chai': 5.2.2
-      '@types/node': 22.5.4
+      '@types/node': 22.17.0
       '@vitest/expect': 3.2.4
       '@vitest/mocker': 3.2.4(vite@7.0.6)
       '@vitest/pretty-format': 3.2.4
@@ -8246,8 +8246,8 @@ packages:
       tinyglobby: 0.2.14
       tinypool: 1.1.1
       tinyrainbow: 2.0.0
-      vite: 7.0.6(@types/node@22.5.4)
-      vite-node: 3.2.4(@types/node@22.5.4)
+      vite: 7.0.6(@types/node@22.17.0)
+      vite-node: 3.2.4(@types/node@22.17.0)
       why-is-node-running: 2.3.0
     transitivePeerDependencies:
       - jiti
