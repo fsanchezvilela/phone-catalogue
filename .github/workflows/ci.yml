@@ -18,12 +18,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24.5.0
-          cache: 'pnpm' # Caches pnpm dependencies
-
       - name: Set up pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 8.6.11
 
       - name: Install dependencies
         run: pnpm install
