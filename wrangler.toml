@@ -1,9 +1,0 @@
-name = "phone-catalogue"
-main = "./.output/server/index.mjs"
-compatibility_date = "2025-04-01"
-compatibility_flags = ["nodejs_compat"]
-
-[assets]
-binding = "ASSETS"
-directory = "./.output/public"
-pages_build_output_dir = "./.output"
