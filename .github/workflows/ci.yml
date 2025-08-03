@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v2
@@ -40,7 +40,7 @@ jobs:
         run: pnpm build
 
       - name: Build Docker image
-        run: docker build -t phone-catalogue-app .
+        run: pnpm run docker:build
 
       # Optional: Push to Docker Hub or your registry
       # - name: Login to DockerHub
