@@ -1,16 +1,37 @@
 version: '3.8'
+
 services:
   app:
+    container_name: phone-catalogue-dev
     build:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - '3000:3000'
+      - "3000:3000"
     volumes:
-      - .:/app
-      - /app/node_modules
+      - .:/app             # Mount code for instant reload
+      - /app/node_modules  # Prevents node_modules overwrite by host
     environment:
-      - NODE_ENV=development
+      NODE_ENV: development
+      # Add other dev env vars here if needed
     env_file:
       - .env.docker
     command: pnpm dev
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    # For improved logs in dev
+    # logging:
+    #   driver: "json-file"
+    #   options:
+    #     max-size: "5m"
+    #     max-file: "2"
+
+# Optionally define a network for advanced setups
+# networks:
+#   default:
+#     driver: bridge

@@ -1,15 +1,28 @@
 FROM node:24-alpine AS dev
- 
+
+# 1. Match exact pnpm version (as per lockfile)
 RUN npm install -g pnpm@8.15.6
 
 WORKDIR /app
 
+# 2. Copy only manifest files first for better caching during dependency changes
 COPY package.json pnpm-lock.yaml ./
 
-RUN pnpm install 
+# 3. Install dependencies
+RUN pnpm install
 
+# 4. Copy rest of the source code (after deps for cache efficiency)
 COPY . .
 
+# 5. Optional: Set environment variable for dev clarity
+ENV NODE_ENV=development
+
+# 6. Expose the dev server port (Vite default: 3000)
 EXPOSE 3000
 
+# 7. Use non-root user for better security (optional, but good practice)
+RUN addgroup -g 1001 -S appgroup && adduser -S appuser -G appgroup -u 1001
+USER appuser
+
+# 8. Default command (runs Vite in dev mode)
 CMD ["pnpm", "dev"]

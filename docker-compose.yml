@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: phone-catalogue-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # args:
+      #   - BUILD_ARG=value  # Example build arg
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: production
+      # CUSTOM_VAR: your_value
+    env_file:
+      - .env.docker # Loads env variables, if file exists
+    
+    #volumes:
+      # Hot reload for dev; comment out for prod
+      #- .:/app
+      #- /app/node_modules  # Prevent overwriting node_modules
+      
+    restart: unless-stopped
+    # Logging driver example:
+    # logging:
+    #   driver: "json-file"
+    #   options:
+    #     max-size: "10m"
+    #     max-file: "3"
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:3000']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+# Optionally add networks for multi-service architecture
+# networks:
+#   default:
+#     driver: bridge
