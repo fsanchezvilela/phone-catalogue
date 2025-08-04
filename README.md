@@ -27,7 +27,7 @@
 | **API Routes**  | `/routes/api/*`                                                                                                      | Handled by Nitro, accessible via `/api/` endpoints |
 | **Testing**     | [Vitest](https://vitest.dev), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) | Fast unit/integration tests, DX focus              |
 | **Dev Tools**   | [pnpm](https://pnpm.io), [Docker](https://docs.docker.com/)                                                          | Fast package manager & reproducible builds         |
-
+| **Components**  | [shadcn/ui](https://ui.shadcn.com/docs/components)                                                                   | UI Primitive Components Library Generator          |
 ---
 
 ## 🚦 Local Development
