@@ -207,3 +207,32 @@
 Contact: @fsanchezvilela
 
 ---
+
+# 🚀 Future Improvements (Out of Scope)
+
+- Cloud Deployment & Hoisting:
+Implement robust cloud deployment pipelines for frictionless production launches, with zero-downtime rollouts.
+
+- Advanced CI/CD Pipelines:
+Integrate enhanced pipelines and GitHub Actions for automated build, test, lint, and deployment workflows. Enable previews, branch environments, and granular status checks.
+
+- Comprehensive Server Testing:
+Expand server-side test coverage with integration, contract, and performance tests to ensure rock-solid API and SSR reliability.
+
+- E2E Testing with Cypress:
+Implement my battle-tested Cypress template for end-to-end UI regression and happy-path flows.
+
+- Backend Feature Enhancements:
+Add advanced backend sorting, filtering, and searching for the phone catalogue API to support complex queries and UX demands.
+
+- Frontend List Virtualization:
+Integrate list virtualization (e.g. react-window) for ultra-fast, scalable rendering of large datasets in the phone list.
+
+- Asset CDN Integration:
+Serve images and static assets via a CDN for lightning-fast global load times and cache efficiency.
+
+- Observability & Telemetry:
+Integrate advanced logging and telemetry with Sentry, Datadog, Google Analytics, and Segment for actionable insights, alerting, and error tracing.
+
+- Production Database Integration:
+Remove the in-memory seed data, and connect to a production-grade database (e.g., Postgres, MongoDB) with secure Dockerized setup and cloud compatibility.

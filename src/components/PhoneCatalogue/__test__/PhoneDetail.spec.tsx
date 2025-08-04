@@ -1,18 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { ReactNode } from 'react';
+import React from 'react';
 
 import { PhoneDetail } from '../PhoneDetail';
 
 // --- Mock Card components to shallow render children only ---
 vi.mock('~/components/ui/card', () => ({
-  Card: ({ children }: { children: ReactNode }) => <div data-testid="card">{children}</div>,
-  CardHeader: ({ children }: { children: ReactNode }) => <header>{children}</header>,
-  CardTitle: ({ children }: { children: ReactNode }) => <h2>{children}</h2>,
-  CardDescription: ({ children }: { children: ReactNode }) => <div>{children}</div>,
-  CardAction: ({ children }: { children: ReactNode }) => <span>{children}</span>,
-  CardContent: ({ children }: { children: ReactNode }) => <section>{children}</section>,
-  CardFooter: ({ children }: { children: ReactNode }) => <footer>{children}</footer>,
+  Card: ({ children }: { children: React.ReactNode }) => <div data-testid="card">{children}</div>,
+  CardHeader: ({ children }: { children: React.ReactNode }) => <header>{children}</header>,
+  CardTitle: ({ children }: { children: React.ReactNode }) => <h2>{children}</h2>,
+  CardDescription: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  CardAction: ({ children }: { children: React.ReactNode }) => <span>{children}</span>,
+  CardContent: ({ children }: { children: React.ReactNode }) => <section>{children}</section>,
+  CardFooter: ({ children }: { children: React.ReactNode }) => <footer>{children}</footer>,
 }));
 
 // --- Mock react-query and router
@@ -37,7 +37,7 @@ vi.mock('@tanstack/react-router', async () => {
     }: {
       to: string;
       className?: string;
-      children: ReactNode;
+      children: React.ReactNode;
     }) => (
       <a href={to} className={className} data-testid="catalogue-link">
         {children}
@@ -55,27 +55,25 @@ describe('PhoneDetail', () => {
   });
 
   it('renders loading indicator', () => {
-    (TanstackRouter.useParams as ReturnType<typeof vi.fn>)
-      .mockReturnValue({ id: '99' })(ReactQuery.useSuspenseQuery as ReturnType<typeof vi.fn>)
-      .mockReturnValue({
-        isLoading: true,
-        isError: false,
-        data: undefined,
-        error: undefined,
-      });
+    (TanstackRouter.useParams as ReturnType<typeof vi.fn>).mockReturnValue({ id: '99' });
+    (ReactQuery.useSuspenseQuery as ReturnType<typeof vi.fn>).mockReturnValue({
+      isLoading: true,
+      isError: false,
+      data: undefined,
+      error: undefined,
+    });
     render(<PhoneDetail />);
     expect(screen.getByText(/loading/i)).toBeInTheDocument();
   });
 
   it('renders error state', () => {
-    (TanstackRouter.useParams as ReturnType<typeof vi.fn>)
-      .mockReturnValue({ id: '99' })(ReactQuery.useSuspenseQuery as ReturnType<typeof vi.fn>)
-      .mockReturnValue({
-        isLoading: false,
-        isError: true,
-        data: undefined,
-        error: { message: 'Not found!' },
-      });
+    (TanstackRouter.useParams as ReturnType<typeof vi.fn>).mockReturnValue({ id: '99' });
+    (ReactQuery.useSuspenseQuery as ReturnType<typeof vi.fn>).mockReturnValue({
+      isLoading: false,
+      isError: true,
+      data: undefined,
+      error: { message: 'Not found!' },
+    });
     render(<PhoneDetail />);
     expect(screen.getByText(/error: not found!/i)).toBeInTheDocument();
   });
