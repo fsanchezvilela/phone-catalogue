@@ -3,6 +3,18 @@
 > **A Next-Gen Fullstack React SSR App. Built with [TanStack Start](https://tanstack.com/start), Tailwind, Vitest, and Docker for modern DX and rapid iteration.  
 > Engineered for production, testing, and collaboration.**
 
+## Preview
+
+- **Home (" / ")**:
+
+![Home](preview/home.png)
+
+- **Detail (" /phone/id ")**:
+
+![desktop](preview/desktop-detail.png)
+
+![mobile-detail](preview/mobile-detail.png)
+
 ---
 
 ## 🧬 Stack Overview
