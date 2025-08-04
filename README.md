@@ -134,7 +134,7 @@
   ```
 
 - **Coverage & TDD ready.**
-- Mocks, hooks, and router all handled (see `/test/` examples).
+- Mocks, hooks, and router all handled (see `__test__` examples).
 
 ---
 
