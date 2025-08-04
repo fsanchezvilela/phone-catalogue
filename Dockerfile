@@ -34,6 +34,7 @@ COPY --from=builder /app/.tanstack ./.tanstack
 COPY --from=builder /app/.nitro ./.nitro
 COPY --from=builder /app/vite.config.ts ./vite.config.ts
 COPY --from=builder /app/tsconfig.json ./tsconfig.json
+COPY --from=builder /app/public ./public
 
 EXPOSE 3000
 

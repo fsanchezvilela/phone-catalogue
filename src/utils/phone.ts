@@ -12,7 +12,7 @@ export const phonesQueryOptions = () =>
         .get<Array<Phone>>(DEPLOY_URL + '/api/phone')
         .then((r) => r.data)
         .catch(() => {
-          throw new Error('Failed to fetch users');
+          throw new Error('Failed to fetch phones catalogue');
         }),
   });
 
@@ -24,6 +24,6 @@ export const phoneQueryOptions = (id: string) =>
         .get<Phone>(DEPLOY_URL + '/api/phone/' + id)
         .then((r) => r.data)
         .catch(() => {
-          throw new Error('Failed to fetch user');
+          throw new Error('Failed to fetch phone details');
         }),
   });

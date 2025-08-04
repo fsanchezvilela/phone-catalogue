@@ -21,7 +21,7 @@ export default defineConfig({
     tsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
-    tanstackStart({ customViteReactPlugin: true, target: 'netlify' }),
+    tanstackStart({ customViteReactPlugin: true }),
     viteReact(),
     tailwindcss(),
   ],
