@@ -5,7 +5,7 @@ import { createServerFileRoute } from '@tanstack/react-start/server';
 // this can be later a database query
 import seed from '~/db/seed/phones.json'; // Adjust the import path as necessary
 
-export const ServerRoute = createServerFileRoute('/api/phone/$id').methods({
+export const ServerRoute = createServerFileRoute('/api/phones/$id').methods({
   GET: async ({ request, params }) => {
     console.info(`Fetching Phone by id=${params.id}... @`, request.url);
     try {

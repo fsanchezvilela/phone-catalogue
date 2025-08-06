@@ -1,7 +1,7 @@
 import { createServerFileRoute } from '@tanstack/react-start/server';
 import phoneSeedResponse from '~/db/seed/phones.json';
 
-export const ServerRoute = createServerFileRoute('/api/phone/').methods({
+export const ServerRoute = createServerFileRoute('/api/phones/').methods({
   GET: async () => {
     return new Response(JSON.stringify(phoneSeedResponse), {
       headers: {

@@ -12,7 +12,7 @@ import {
 } from '~/components/ui/card';
 
 export const PhoneDetail = () => {
-  const params = useParams({ from: '/phone/$id' });
+  const params = useParams({ from: '/phones/$id' });
   const phoneQuery = useSuspenseQuery(phoneQueryOptions(params.id));
   const phone = phoneQuery.data;
   if (phoneQuery.isLoading) {

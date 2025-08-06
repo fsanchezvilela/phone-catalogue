@@ -8,7 +8,7 @@ export const columns: ColumnDef<Phone>[] = [
     header: 'Name',
     cell: ({ row }) => (
       <Link
-        to="/phone/$id"
+        to="/phones/$id"
         params={{ id: String(row.original.id) }}
         className="text-blue-800 hover:text-blue-600"
         activeProps={{ className: 'text-black font-bold' }}

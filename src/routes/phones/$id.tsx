@@ -4,7 +4,7 @@ import { PhoneDetail } from '~/components/PhoneCatalogue/PhoneDetail';
 import { RouterContext } from '~/types/Router';
 import { phoneQueryOptions } from '~/utils/phone';
 
-export const Route = createFileRoute('/phone/$id')({
+export const Route = createFileRoute('/phones/$id')({
   loader: async (ctx) => {
     const { queryClient } = ctx.context as RouterContext;
     const { id } = ctx.params;
