@@ -9,7 +9,7 @@
 
 ![Home](preview/home.png)
 
-- **Detail (" /phone/id ")**:
+- **Detail (" /phones/id ")**:
 
 ![desktop](preview/desktop-detail.png)
 
@@ -113,7 +113,7 @@
 
 - **API routes:**  
   Create files in `src/routes/api/`.  
-  E.g. `src/routes/api/phone.ts` → `/api/phone` endpoint.
+  E.g. `src/routes/api/phones.ts` → `/api/phones` endpoint.
   - Uses [Nitro’s event handlers](https://nitro.unjs.io/guide/routing)
   - Can use any NPM package/server DB
 - **SSR:**  
